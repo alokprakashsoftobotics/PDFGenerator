@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 85%; margin: 0 7.5%;">
+        <div style="text-align: center;">
+            <table style="width: 100%;border: none;margin: 50px 0;">
+                <tr style="height: 30px;font-weight: 600;font-size: 12px;border: none;">
+                    <td style="width: 50%;border: none;text-align: center;"><%= headerLeft %></td>
+                    <td style="width: 50%;border: none;text-align: center;"><%= headerRight %></td>
+                </tr>
+            </table>
+            <table style="text-align : center;width: 100%;">
+                <tr style="height: 30px;text-transform: uppercase;font-size: 12px;">
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+                <% if (tableData.length > 0) { %>
+                <% tableData.forEach(item => {%>
+                <tr style="height: 30px;font-size: 12px;">
+                    <td><%= item._id %></td>
+                    <td><%= item.firstName + ' ' + item.lastName %></td>
+                    <td><%= item.email %></td>
+                    <td><%= item.address %></td>
+                </tr>
+                <%	});%>
+                <% }%>
+            </table>
+            <table style="width: 100%;border: none;margin: 50px 0;">
+                <tr style="height: 30px;font-weight: 600;font-size: 12px;border: none;">
+                    <td style="text-align: left;border: none;"><img style="width: 60%" src="<%= leftImage %>" ></td>
+                    <td style="text-align: right;border: none;"><img style="width: 60%" src="<%= rightImage %>" ></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
